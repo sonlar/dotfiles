@@ -7,15 +7,21 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 config.keys = {
 	-- ALT + 1-3 to activate that pane
-	{ key = "1", mods = "ALT", action = act.ActivatePaneByIndex(0) },
-	{ key = "2", mods = "ALT", action = act.ActivatePaneByIndex(1) },
-	{ key = "3", mods = "ALT", action = act.ActivatePaneByIndex(2) },
+	{ key = "1", mods = "CTRL", action = act.ActivatePaneByIndex(0) },
+	{ key = "2", mods = "CTRL", action = act.ActivatePaneByIndex(1) },
+	{ key = "3", mods = "CTRL", action = act.ActivatePaneByIndex(2) },
 	-- Create a new tab in the same domain as the current pane.
 	{
 		key = "t",
-		mods = "ALT",
+		mods = "CTRL",
 		action = act.SpawnTab("CurrentPaneDomain"),
 	},
+	-- Close current pane
+	{
+    		key = 'w',
+    		mods = 'CTRL',
+   		action = wezterm.action.CloseCurrentPane { confirm = true },
+  	},
 	-- Create new pane horizontally
 	{
 		key = "!",
