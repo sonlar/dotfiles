@@ -6,7 +6,7 @@ local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
 config.keys = {
-	-- ALT + 1-3 to activate that pane
+	-- CTRL + 1-3 to activate that pane
 	{ key = "1", mods = "CTRL", action = act.ActivatePaneByIndex(0) },
 	{ key = "2", mods = "CTRL", action = act.ActivatePaneByIndex(1) },
 	{ key = "3", mods = "CTRL", action = act.ActivatePaneByIndex(2) },
@@ -37,10 +37,10 @@ config.keys = {
 }
 
 for i = 1, 8 do
-	-- CTRL+ALT + number to activate that tab
+	-- ALT + number to activate that tab
 	table.insert(config.keys, {
 		key = tostring(i),
-		mods = "CTRL|ALT",
+		mods = "ALT",
 		action = act.ActivateTab(i - 1),
 	})
 end
