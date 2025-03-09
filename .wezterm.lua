@@ -19,7 +19,7 @@ config.keys = {
 	-- Close current pane
 	{
     		key = 'w',
-    		mods = 'CTRL',
+    		mods = 'ALT',
    		action = wezterm.action.CloseCurrentPane { confirm = true },
   	},
 	-- Create new pane horizontally
